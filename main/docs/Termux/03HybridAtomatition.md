@@ -8,8 +8,15 @@ Add the roadmap to your repository:
 # Save the roadmap as 04AutomationRoadmap.md in main/docs/Termux/
 git add main/docs/Termux/04AutomationRoadmap.md
 git commit -m "Add comprehensive automation roadmap with 5 milestones"
-git pushSet up GitHub project management:
-Go to your GitHub repository → Projects → New ProjectCreate issues for each milestoneSet up project board to track progressStart Milestone 1 - Phase 1.1:
+git push
+
+# Set up GitHub project management:
+Go to your GitHub repository 
+→ Projects 
+→ New Project
+→ Create issues for each milestone
+→ Set up project board to track progress
+→ Start Milestone 1 - Phase 1.1:
 ## Create your first data collection script
 nano main/scripts/collect-env-data.sh
 
