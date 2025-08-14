@@ -1,0 +1,12 @@
+# Exclude logs and temporary files
+logs/
+*.tmp
+*.temp
+
+# Keep structure files
+!.gitignore
+!snapshots/
+!packages/
+!system/
+!config/
+!reports/
