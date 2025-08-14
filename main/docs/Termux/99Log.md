@@ -6,8 +6,7 @@
 - linked issues to new project "Termux Environment"
 - created this 99Log.md
 - created scripts/Termux-env folder
-- created collect-env-data.sh (empty)
 - pushed to github
-- created branch for:
+- created branches for:
   - "Local Data Collection Scripts " and subissues
   - "GitHub Actions Setup" and sub issues
