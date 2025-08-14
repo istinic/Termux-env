@@ -1,0 +1,29 @@
+# Sensitive files
+.ssh/id_*
+.ssh/authorized_keys
+.ssh/known_hosts*
+.bash_history
+.termux/termux.properties
+
+# NPM cache and packages
+.npm/
+node_modules/
+global_packages/
+package-lock.json
+
+# Temporary/cache files
+.cache/
+.tmp/
+*.tmp
+*.log
+
+# Large files you might not want to track
+*.zip
+*.tar.gz
+
+# Nested repositories
+main/ma2/
+*/.git*
+
+# Android storage symlinks
+storage/
