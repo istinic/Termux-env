@@ -2,42 +2,54 @@
 
 This repository tracks my personal Termux environment configuration, documentation, and scripts for backup and restoration purposes.
 
-##  Repository Structure
+## 📁 Repository Structure
 
 ```
 .
- .bashrc                                    # Shell configuration
- .gitconfig                                 # Git settings
- .npmrc                                    # NPM configuration
- main/
-    docs/
-       Termux/
-           00Termux.evolving.md          # Environment evolution notes
-           01TermuxGit.md                # Git setup documentation
-           02GitAutomate.md              # Git automation strategies
-           03HybridAutomation.md         # Hybrid automation approach
-    scripts/
-        cleanup.sh                        # Custom cleanup script
- package.json                              # Node.js project configuration
- README.md                                 # This file
+├── .bashrc                                    # Shell configuration
+├── .gitconfig                                 # Git settings
+├── .npmrc                                    # NPM configuration
+├── main/
+│   ├── data/                                 # Environment data collection
+│   │   ├── packages/                         # Package lists and statistics
+│   │   ├── system/                           # System information snapshots
+│   │   ├── config/                           # Configuration checksums
+│   │   ├── snapshots/                        # JSON environment snapshots
+│   │   └── reports/                          # Automated reports
+│   ├── docs/
+│   │   └── Termux/
+│   │       ├── 00Termux.evolving.md          # Environment evolution notes
+│   │       ├── 01TermuxGit.md                # Git setup documentation
+│   │       ├── 02GitAutomate.md              # Git automation strategies
+│   │       ├── 03HybridAutomation.md         # Hybrid automation approach
+│   │       ├── 04AutomationRoadmap.md        # Development roadmap
+│   │       ├── 06collect-env-data.sh.md      # Data collection documentation
+│   │       └── 99Log.md                      # Development log
+│   └── scripts/
+│       ├── Termux-env/
+│       │   └── collect-env-data.sh           # Environment data collection
+│       └── cleanup.sh                        # Custom cleanup script
+├── package.json                              # Node.js project configuration
+├── .github/workflows/                        # GitHub Actions (planned)
+└── README.md                                 # This file
 ```
 
-##  What This Repository Tracks
+## 🎯 What This Repository Tracks
 
-###  Included
+### ✅ Included
 - **Configuration files**: Shell, Git, NPM settings
 - **Documentation**: Setup notes, learning progress, troubleshooting
 - **Custom scripts**: Personal automation and utility scripts
 - **Project configs**: Package.json and similar configuration files
 
-###  Excluded (via .gitignore)
+### ❌ Excluded (via .gitignore)
 - **Sensitive data**: SSH keys, authentication tokens
 - **Cache files**: NPM cache, temporary files, logs
 - **Large files**: Archives, binaries, downloaded packages
 - **System files**: Android storage symlinks, package caches
 - **Third-party repos**: Nested git repositories
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### Setting Up SSH for Git
 ```bash
@@ -57,29 +69,53 @@ cd $HOME
 git clone git@github.com:yourusername/termux-environment.git .
 ```
 
-##  Package Management (Planned)
+## 🚀 Automation Roadmap
 
-Future enhancements will include:
-- Automated package list generation
-- Installation scripts for quick environment restoration
-- Package change tracking via GitHub Actions
-- Hybrid automation for environment snapshots
+This project follows a structured **5-milestone development roadmap** for hybrid automation:
 
-##  Workflow
+**📋 [View Complete Roadmap](main/docs/Termux/04AutomationRoadmap.md)**
 
-1. **Daily work**: Make changes to Termux environment
-2. **Document changes**: Update markdown files in `main/docs/`
-3. **Commit regularly**: Track important configuration changes
-4. **Push to GitHub**: Backup and version control
+### Current Status
+- ✅ **Milestone 1.1**: Local Data Collection Scripts (COMPLETE)
+- 🔄 **Milestone 1.2**: GitHub Actions Setup (IN PROGRESS)
+- ⏳ **Milestone 2**: Intelligence & Change Detection
+- ⏳ **Milestone 3**: Dashboard & Visual Insights  
+- ⏳ **Milestone 4**: Notifications & Alerts
+- ⏳ **Milestone 5**: Advanced Features
 
+### Quick Progress Check
 ```bash
+# View latest environment data
+cat main/data/reports/collection-report_*.md | tail -20
+
+# Check roadmap progress
+grep -E "- \[x\]|✅" main/docs/Termux/04AutomationRoadmap.md | wc -l
+```
+
+## 🔄 Current Workflow
+
+### Daily Development
+1. **Make changes** to Termux environment
+2. **Run data collection**: `./main/scripts/Termux-env/collect-env-data.sh`
+3. **Document changes**: Update markdown files in `main/docs/Termux/`
+4. **Commit regularly**: Track important configuration changes
+5. **Push to GitHub**: Trigger automation workflows
+
+### Git Commands
+```bash
+# Run environment data collection
+./main/scripts/Termux-env/collect-env-data.sh
+
 # Regular update workflow
 git add .
 git commit -m "Update: describe your changes"
 git push
+
+# Check automation status
+git log --oneline | head -5
 ```
 
-##  Useful Commands
+## 🛠️ Useful Commands
 
 ### Git Management
 ```bash
@@ -93,19 +129,25 @@ git log --oneline
 git push
 ```
 
-### Package Information
+### Package & Environment Information
 ```bash
-# List installed packages
-pkg list-installed
+# View collected environment data
+cat main/data/packages/current-packages.txt | head -10
+
+# Check environment statistics  
+cat main/data/snapshots/latest-snapshot.json
 
 # Package information
 pkg show package-name
 
 # Update packages
 pkg update && pkg upgrade
+
+# Generate fresh environment data
+./main/scripts/Termux-env/collect-env-data.sh
 ```
 
-##  Goals
+## 🎯 Goals
 
 - **Backup**: Keep safe copies of important configurations
 - **Documentation**: Record learning process and solutions
@@ -113,14 +155,14 @@ pkg update && pkg upgrade
 - **Version Control**: Track changes over time
 - **Restoration**: Quick recovery of Termux environment on new devices
 
-##  Notes
+## 📝 Notes
 
 - Branch name: `termux-env` (descriptive of purpose)
 - SSH key management: Private keys never tracked in repository
 - Regular commits help track environment evolution
 - Documentation is key to understanding setup decisions
 
-##  Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 - **Pager errors**: Set `git config --global core.pager ""`
