@@ -10,3 +10,5 @@
 - created branches for:
   - "Local Data Collection Scripts " and subissues
   - "GitHub Actions Setup" and sub issues
+  - Testing:
+    - modified Actions General settings to "read/write" enabled
