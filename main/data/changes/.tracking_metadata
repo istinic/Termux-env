@@ -1,0 +1,9 @@
+# Change Detection Metadata
+# This file tracks change detection history and configuration
+
+TRACKING_START_DATE="$(date -Iseconds)"
+LAST_ANALYSIS_DATE=""
+DETECTION_VERSION="2.1.0"
+CHANGE_THRESHOLD_PACKAGES=1
+CHANGE_THRESHOLD_CONFIGS=1
+SIGNIFICANT_CHANGE_THRESHOLD=5
