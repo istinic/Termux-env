@@ -44,5 +44,8 @@ chmod +x main/scripts/Termux-env/create-visual-dashboard.sh
 - GitHub Pages ready structure
 - Real-time data from your analytics
 - This will create a professional-grade visual dashboard that transforms text-based analytics into beautiful, interactive visualizations!
-- 
-- Ready to create your visual dashboard? 🚀
+
+Let's run it to create your professional-grade interactive dashboard:
+
+## Generate the visual dashboard
+./main/scripts/Termux-env/create-visual-dashboard.sh
