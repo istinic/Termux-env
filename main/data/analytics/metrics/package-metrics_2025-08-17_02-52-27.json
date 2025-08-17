@@ -1,0 +1,13 @@
+{
+    "timestamp": "2025-08-17T02:52:27+03:00",
+    "analysis_id": "2025-08-17_02-52-27",
+    "package_trends": {
+        "snapshots_analyzed": 2,
+        "first_count": 90,
+        "current_count": 90,
+        "net_growth": 0,
+        "growth_rate_percent": 0,
+        "analysis_period_start": "2025-08-14",
+        "analysis_period_end": "2025-08-16"
+    }
+}
