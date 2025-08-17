@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termux Environment Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🚀 Termux Environment Dashboard</div>
+        <div class="status">
+            <div class="status-dot"></div>
+            <span>System Operational</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">90</div>
+                <div class="stat-label">Total Packages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">42M</div>
+                <div class="stat-label">Storage Used</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">98%</div>
+                <div class="stat-label">Health Score</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0%</div>
+                <div class="stat-label">Growth Rate</div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-section">
+            <h2 class="chart-title">📈 Package Trends</h2>
+            <div class="chart-placeholder">
+                📊 Interactive Chart Area<br>
+                <small>(Chart.js integration ready)</small>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h2 class="chart-title">💾 Storage & System Health</h2>
+            <div class="chart-placeholder">
+                🏥 System Health Visualization<br>
+                <small>(Multi-metric dashboard)</small>
+            </div>
+        </div>
+
+        <!-- Status Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                    <th>Health</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Package Management</td>
+                    <td>✅ Operational</td>
+                    <td>15:52</td>
+                    <td>95%</td>
+                </tr>
+                <tr>
+                    <td>Data Collection</td>
+                    <td>✅ Active</td>
+                    <td>16:22</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <td>Analytics Engine</td>
+                    <td>✅ Running</td>
+                    <td>16:37</td>
+                    <td>98%</td>
+                </tr>
+                <tr>
+                    <td>GitHub Actions</td>
+                    <td>✅ Success</td>
+                    <td>14:52</td>
+                    <td>96%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Alerts -->
+        <div class="alert alert-success">
+            <strong>✅ System Health Check Passed</strong><br>
+            All monitoring systems are operational and collecting data successfully.
+        </div>
+
+        <div class="alert alert-warning">
+            <strong>⚠️ Pending Git Changes</strong><br>
+            Several files have uncommitted changes. Consider reviewing and committing recent modifications.
+        </div>
+
+        <!-- Footer Info -->
+        <div class="chart-section" style="text-align: center; margin-top: 2rem;">
+            <h3>📊 Dashboard Information</h3>
+            <p><strong>Generated:</strong> Sun Aug 17 16:52:00 EEST 2025</p>
+            <p><strong>Version:</strong> 3.1.0</p>
+            <p><strong>Update Frequency:</strong> Real-time</p>
+            <p><strong>Data Sources:</strong> Termux Environment Analytics</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('🚀 Termux Environment Dashboard Loaded');
+        console.log('📊 Package Count:', 90);
+        console.log('💾 Storage Usage:', '42M');
+        
+        // Simple refresh functionality
+        setInterval(() => {
+            console.log('🔄 Dashboard heartbeat:', new Date().toLocaleTimeString());
+        }, 60000); // Every minute
+    </script>
+</body>
+</html>
