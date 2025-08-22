@@ -3,7 +3,6 @@
 .ssh/authorized_keys
 .ssh/known_hosts*
 .bash_history
-.termux/termux.properties
 
 # NPM cache and packages
 .npm/
@@ -27,3 +26,11 @@ main/ma2/
 
 # Android storage symlinks
 storage/
+
+# Zsh configuration files
+.oh-my-zsh/
+.shell.pre-oh-my-zsh
+.termux/
+.zcompdump*
+.zsh_history
+.zshrc
