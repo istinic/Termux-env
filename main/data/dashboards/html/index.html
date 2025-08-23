@@ -1,126 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termux Environment Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Termux Environment Dashboard - Advanced Analytics</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">🚀 Termux Environment Dashboard</div>
-        <div class="status">
-            <div class="status-dot"></div>
-            <span>System Operational</span>
-        </div>
+      <div class="logo">🚀 Termux Environment Dashboard</div>
+      <div class="status">
+        <div class="status-dot"></div>
+        <span>System Operational</span>
+        <div class="real-time-indicator">LIVE</div>
+      </div>
     </header>
 
     <div class="container">
-        <!-- Stats Grid -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value">90</div>
-                <div class="stat-label">Total Packages</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">42M</div>
-                <div class="stat-label">Storage Used</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">98%</div>
-                <div class="stat-label">Health Score</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">0%</div>
-                <div class="stat-label">Growth Rate</div>
-            </div>
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">90</div>
+          <div class="stat-label">Total Packages</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-value">42M</div>
+          <div class="stat-label">Storage Used</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Health Score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0%</div>
+          <div class="stat-label">Growth Rate</div>
+        </div>
+      </div>
 
-        <!-- Charts Section -->
+      <!-- Advanced Charts Section -->
+      <div class="chart-section">
+        <h2 class="chart-title">📈 Package Installation Trends</h2>
+        <div class="chart-container">
+          <canvas id="packageTrendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart Grid -->
+      <div class="chart-row">
         <div class="chart-section">
-            <h2 class="chart-title">📈 Package Trends</h2>
-            <div class="chart-placeholder">
-                📊 Interactive Chart Area<br>
-                <small>(Chart.js integration ready)</small>
-            </div>
+          <h3 class="chart-title">💾 Storage Utilization</h3>
+          <div class="chart-container" style="height: 300px">
+            <canvas id="storageChart"></canvas>
+          </div>
         </div>
 
         <div class="chart-section">
-            <h2 class="chart-title">💾 Storage & System Health</h2>
-            <div class="chart-placeholder">
-                🏥 System Health Visualization<br>
-                <small>(Multi-metric dashboard)</small>
+          <h3 class="chart-title">🏥 System Health Radar</h3>
+          <div class="chart-container" style="height: 300px">
+            <canvas id="healthChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Progress Bars -->
+      <div class="chart-section">
+        <h2 class="chart-title">🔍 Component Status Analysis</h2>
+        <div class="progress-container">
+          <div class="progress-item">
+            <span>Package Management</span>
+            <div class="progress-bar">
+              <div
+                id="progress-0"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
             </div>
-        </div>
+            <span class="text-success">95%</span>
+          </div>
 
-        <!-- Status Table -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Component</th>
-                    <th>Status</th>
-                    <th>Last Updated</th>
-                    <th>Health</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Package Management</td>
-                    <td>✅ Operational</td>
-                    <td>17:23</td>
-                    <td>95%</td>
-                </tr>
-                <tr>
-                    <td>Data Collection</td>
-                    <td>✅ Active</td>
-                    <td>17:53</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <td>Analytics Engine</td>
-                    <td>✅ Running</td>
-                    <td>18:08</td>
-                    <td>98%</td>
-                </tr>
-                <tr>
-                    <td>GitHub Actions</td>
-                    <td>✅ Success</td>
-                    <td>16:23</td>
-                    <td>96%</td>
-                </tr>
-            </tbody>
-        </table>
+          <div class="progress-item">
+            <span>Data Collection</span>
+            <div class="progress-bar">
+              <div
+                id="progress-1"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="text-success">100%</span>
+          </div>
 
-        <!-- Alerts -->
-        <div class="alert alert-success">
-            <strong>✅ System Health Check Passed</strong><br>
-            All monitoring systems are operational and collecting data successfully.
-        </div>
+          <div class="progress-item">
+            <span>Change Detection</span>
+            <div class="progress-bar">
+              <div
+                id="progress-2"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="text-success">92%</span>
+          </div>
 
-        <div class="alert alert-warning">
-            <strong>⚠️ Pending Git Changes</strong><br>
-            Several files have uncommitted changes. Consider reviewing and committing recent modifications.
-        </div>
+          <div class="progress-item">
+            <span>GitHub Actions</span>
+            <div class="progress-bar">
+              <div
+                id="progress-3"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="text-success">96%</span>
+          </div>
 
-        <!-- Footer Info -->
-        <div class="chart-section" style="text-align: center; margin-top: 2rem;">
-            <h3>📊 Dashboard Information</h3>
-            <p><strong>Generated:</strong> Fri Aug 22 18:23:24 EEST 2025</p>
-            <p><strong>Version:</strong> 3.1.0</p>
-            <p><strong>Update Frequency:</strong> Real-time</p>
-            <p><strong>Data Sources:</strong> Termux Environment Analytics</p>
+          <div class="progress-item">
+            <span>Storage Efficiency</span>
+            <div class="progress-bar">
+              <div
+                id="progress-4"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="text-success">98%</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Status Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Status</th>
+            <th>Last Updated</th>
+            <th>Health</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Package Management</td>
+            <td>✅ Operational</td>
+            <td>20:00</td>
+            <td>95%</td>
+          </tr>
+          <tr>
+            <td>Data Collection</td>
+            <td>✅ Active</td>
+            <td>20:30</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Analytics Engine</td>
+            <td>✅ Running</td>
+            <td>20:45</td>
+            <td>98%</td>
+          </tr>
+          <tr>
+            <td>GitHub Actions</td>
+            <td>✅ Success</td>
+            <td>19:00</td>
+            <td>96%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Alerts -->
+      <div class="alert alert-success">
+        <strong>✅ Advanced Analytics Enabled</strong><br />
+        Real-time interactive charts and visualizations are now active.
+      </div>
+
+      <div class="alert alert-warning">
+        <strong>⚠️ Pending Git Changes</strong><br />
+        Several files have uncommitted changes. Consider reviewing and
+        committing recent modifications.
+      </div>
+
+      <!-- Footer Info -->
+      <div class="chart-section" style="text-align: center; margin-top: 2rem">
+        <h3>📊 Dashboard Information</h3>
+        <p><strong>Generated:</strong> Sat Aug 23 21:00:35 EEST 2025</p>
+        <p><strong>Version:</strong> 3.2.0 - Advanced Analytics</p>
+        <p><strong>Charts:</strong> Interactive with Chart.js</p>
+        <p><strong>Update Frequency:</strong> Real-time (30s refresh)</p>
+        <p>
+          <strong>Last Updated:</strong>
+          <span id="last-updated">Sat Aug 23 21:00:35 EEST 2025</span>
+        </p>
+      </div>
     </div>
 
+    <!-- Load advanced analytics -->
+    <script src="./assets/js/advanced-charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script>
-        console.log('🚀 Termux Environment Dashboard Loaded');
-        console.log('📊 Package Count:', 90);
-        console.log('💾 Storage Usage:', '42M');
-        
-        // Simple refresh functionality
-        setInterval(() => {
-            console.log('🔄 Dashboard heartbeat:', new Date().toLocaleTimeString());
-        }, 60000); // Every minute
+      eruda.init();
     </script>
-</body>
+    =======
+    <script>
+      console.log('🚀 Termux Environment Dashboard Loaded');
+      console.log('📊 Package Count:', 90);
+      console.log('💾 Storage Usage:', '42M');
+
+      // Simple refresh functionality
+      setInterval(() => {
+        console.log('🔄 Dashboard heartbeat:', new Date().toLocaleTimeString());
+      }, 60000); // Every minute
+    </script>
+    <script>
+      alert('JS is working');
+    </script>
+  </body>
 </html>
