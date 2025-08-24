@@ -6,7 +6,7 @@ class TermuxAnalytics {
     constructor() {
         this.charts = {};
         this.data = {};
-        this.init();
+        this.waitForChart();
     }
 
     async init() {
@@ -290,3 +290,19 @@ class TermuxAnalytics {
             const data = this.charts.packageTrend.data;
             data.labels.push(timeLabel);
             data.datasets[0].data.push(90 + Math.floor(Math.random() * 2));
+    waitForChart() {
+        if (typeof Chart !== 'undefined') {
+            console.log('✅ Chart.js loaded, initializing dashboard...');
+            this.init();
+        } else {
+            console.log('⏳ Waiting for Chart.js to load...');
+            setTimeout(() => this.waitForChart(), 200);
+        }
+    }
+}
+
+// Initialize when DOM is ready, but wait for Chart.js
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 DOM ready, checking for Chart.js...');
+    window.termuxAnalytics = new TermuxAnalytics();
+});
