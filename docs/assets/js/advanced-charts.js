@@ -1,3 +1,4 @@
+<script>
 // Advanced Charts & Analytics - Milestone 3.2
 // Interactive Chart.js implementation
 
@@ -155,7 +156,7 @@ class TermuxAnalytics {
         // Add center text for efficiency
         const centerText = {
             id: 'centerText',
-            beforeDatasetsDraw(chart) {
+            beforeDatasetsDraw: (chart) => {
                 const { ctx, chartArea } = chart;
                 ctx.save();
                 ctx.font = 'bold 18px sans-serif';
@@ -172,7 +173,7 @@ class TermuxAnalytics {
             }
         };
 
-        this.charts.storage.plugins = [centerText];
+        this.charts.storage.config.plugins.push(centerText);
         console.log('💾 Storage chart created');
     }
 
@@ -289,63 +290,3 @@ class TermuxAnalytics {
             const data = this.charts.packageTrend.data;
             data.labels.push(timeLabel);
             data.datasets[0].data.push(90 + Math.floor(Math.random() * 2));
-            
-            // Keep only last 10 data points
-            if (data.labels.length > 10) {
-                data.labels.shift();
-                data.datasets[0].data.shift();
-            }
-            
-            this.charts.packageTrend.update();
-        }
-
-        // Update timestamp
-        const timestamp = document.getElementById('last-updated');
-        if (timestamp) {
-            timestamp.textContent = now.toLocaleString();
-        }
-
-        console.log('📊 Charts updated at', timeLabel);
-    }
-
-    // Public methods for manual refresh
-    refreshAllCharts() {
-        Object.values(this.charts).forEach(chart => {
-            chart.update();
-        });
-        console.log('🔄 All charts refreshed');
-    }
-
-    exportChartData() {
-        const exportData = {
-            timestamp: new Date().toISOString(),
-            packageTrends: this.data.packageTrends,
-            storageData: this.data.storageData,
-            systemHealth: this.data.systemHealth
-        };
-        
-        console.log('📤 Export data:', exportData);
-        return exportData;
-    }
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    window.termuxAnalytics = new TermuxAnalytics();
-});
-
-// Utility functions
-function formatBytes(bytes) {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-}
-
-function getHealthColor(score) {
-    if (score >= 95) return '#56d364';      // Green
-    if (score >= 85) return '#d29922';      // Yellow  
-    if (score >= 70) return '#fb8500';      // Orange
-    return '#f85149';                       // Red
-}
