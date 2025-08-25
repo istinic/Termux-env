@@ -1,5 +1,8 @@
 # Milestone 3.2 - Advanced Analytics & Visualizations:
 
+# This step failed, swithing to "Termux Package Intelligence System"
+
+
 ## Create new branch for Milestone 3.2 (if not already on a chart branch)
 git checkout -b 5-32-advanced-visualizations
 
