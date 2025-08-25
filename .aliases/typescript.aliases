@@ -1,0 +1,18 @@
+# TypeScript / Node aliases
+
+# Compile
+alias tscb='tsc --build'
+alias tscw='tsc --watch'
+
+# Show files included
+alias tsfiles='tsc --listFiles'
+
+# Run TS directly (requires ts-node)
+alias tsn='ts-node'
+alias tsn-watch='ts-node-dev --respawn'
+
+# Type checking only
+alias tscheck='tsc --noEmit'
+
+# Clean build artifacts
+alias tsclean='rm -rf dist && rm -rf build'

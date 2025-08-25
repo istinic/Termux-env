@@ -12,3 +12,8 @@
   - "GitHub Actions Setup" and sub issues
   - Testing:
     - modified Actions General settings to "read/write" enabled
+
+# 25 Aug 2025
+
+- by the time during the milstone 3.2 installed OhMyZsh. See details of setting up the environment there, regarding alliases.
+- 

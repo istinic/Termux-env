@@ -33,4 +33,4 @@ storage/
 .termux/
 .zcompdump*
 .zsh_history
-.zshrc
+

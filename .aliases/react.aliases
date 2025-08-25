@@ -1,0 +1,22 @@
+# React / Frontend aliases
+
+# Common npm scripts
+alias start='npm start'
+alias dev='npm run dev'
+alias build='npm run build'
+alias test='npm test'
+alias lint='npm run lint'
+alias format='npm run format'
+
+# Yarn (if you use it)
+alias ydev='yarn dev'
+alias ybuild='yarn build'
+
+# Vite / Next.js helpers
+alias vdev='vite'
+alias vbuild='vite build'
+alias ndev='next dev'
+alias nbuild='next build'
+
+# Package.json quick view
+alias pj='cat package.json | jq .scripts'
