@@ -1,0 +1,23 @@
+{
+    "metadata": {
+        "timestamp": "2025-08-26T07:06:41+03:00",
+        "collection_script": "collect-env-data.sh",
+        "version": "1.0.0",
+        "termux_environment": "/data/data/com.termux/files/home"
+    },
+    "summary": {
+        "total_packages": 100,
+        "storage_used": "65M",
+        "git_changes": 12,
+        "collection_success": true
+    },
+    "files_generated": {
+        "packages": "3",
+        "system": "3",  
+        "config": "2"
+    },
+    "hashes": {
+        "packages": "2277537d1c0ae5dc50ef71f7a7608434",
+        "system": "638ee4536805e4bd685e34708cea11fe"
+    }
+}

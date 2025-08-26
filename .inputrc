@@ -1,0 +1,86 @@
+# ===================================================
+# Termux F-Key Shortcut Reference & Most Used Actions
+# ===================================================
+
+# Learn more about shortcuts in key Termux apps:
+# Nano: https://nano-editor.org/docs.php
+# Htop: https://htop.dev/
+# General Bash/Termux keys: https://wiki.termux.com/wiki/Keyboard
+
+# ===================================================
+# Windows common F-key conventions (for reference)
+# ===================================================
+# F1 - Help / manual
+# F2 - Rename / edit
+# F3 - Search
+# F4 - Close / exit
+# F5 - Refresh / repeat
+# F6 - Move / switch
+# F7 - History / spell check
+# F8 - Extend selection / console scroll
+# F9 - Menu / scripts
+# F10 - Menu / exit
+# (Mostly for inspiration)
+
+# ===================================================
+# 20 Most Used Termux / Bash Actions
+# ===================================================
+# 1 - List files: ls -la
+# 2 - Current directory: pwd
+# 3 - Clear screen: clear
+# 4 - Show command history: history
+# 5 - Edit a file: nano <filename>
+# 6 - Monitor processes: htop
+# 7 - Git status: git status
+# 8 - Git log: git log --oneline
+# 9 - Tail log file: tail -f /var/log/syslog
+# 10 - Search files: grep -Ri "pattern" .
+# 11 - Disk usage: du -sh *
+# 12 - Free memory / CPU info: free -h / top
+# 13 - Network status: ifconfig / ip a
+# 14 - Package update: pkg update && pkg upgrade -y
+# 15 - Start background process: nohup command &
+# 16 - Kill process: kill <pid>
+# 17 - Download file: wget <url>
+# 18 - Archive files: tar -czvf archive.tar.gz folder/
+# 19 - SSH into server: ssh user@host
+# 20 - Exit Termux: exit
+
+# ===================================================
+# .inputrc Template for F-Key Bindings
+# ===================================================
+# Format:
+#   # F-key description
+#   "\e??": "command\n"
+
+# Example entries:
+# F1 - List files in current directory
+"\eOP": "ls -la\n"
+
+# F2 - Show current directory path
+"\eOQ": "pwd\n"
+
+# F3 - Clear the screen
+"\eOR": "clear\n"
+
+# F4 - Show command history
+"\eOS": "history\n"
+
+# F5 - Edit a file (nano)
+# Usage: after pressing F5, type filename and Enter
+"\e[15~": "nano \n"
+
+# F6 - Monitor processes (htop)
+"\e[17~": "htop\n"
+
+# F7 - Git status
+"\e[18~": "git status\n"
+
+# F8 - Git log (oneline)
+"\e[19~": "git log --oneline\n"
+
+# F9 - Tail syslog
+"\e[20~": "tail -f /var/log/syslog\n"
+
+# F10 - Exit Termux
+"\e[21~": "exit\n"
