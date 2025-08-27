@@ -55,32 +55,41 @@
 
 # Example entries:
 # F1 - List files in current directory
-"\eOP": "ls -la\n"
+#"\eOP": "ls -la\n"
 
 # F2 - Show current directory path
-"\eOQ": "pwd\n"
+#"\eOQ": "pwd\n"
 
 # F3 - Clear the screen
-"\eOR": "clear\n"
+#"\eOR": "clear\n"
 
 # F4 - Show command history
-"\eOS": "history\n"
+#"\eOS": "history\n"
 
 # F5 - Edit a file (nano)
 # Usage: after pressing F5, type filename and Enter
-"\e[15~": "nano \n"
+#"\e[15~": "nano \n"
 
 # F6 - Monitor processes (htop)
-"\e[17~": "htop\n"
+#"\e[17~": "htop\n"
 
 # F7 - Git status
-"\e[18~": "git status\n"
+#"\e[18~": "git status\n"
 
 # F8 - Git log (oneline)
-"\e[19~": "git log --oneline\n"
+#"\e[19~": "git log --oneline\n"
 
 # F9 - Tail syslog
-"\e[20~": "tail -f /var/log/syslog\n"
+#"\e[20~": "tail -f /var/log/syslog\n"
 
 # F10 - Exit Termux
-"\e[21~": "exit\n"
+#"\e[21~": "exit\n"
+
+# Points to the git command list
+
+$include ~/.inputrc.d/git
+
+# Use:
+# bind -f ~/.inputrc
+# to reload readline
+# Start new Termux session

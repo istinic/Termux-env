@@ -1,0 +1,84 @@
+# ~/.inputrc.d/git
+# ----------------------------
+# Git Commands on F1–F20
+# ----------------------------
+
+# F1 → git status
+# Check repo status: staged, unstaged, untracked files
+"\eOP": "git status\n"
+
+# F2 → git branch
+# List all local branches; current branch marked with *
+"\eOQ": "git branch\n"
+
+# F3 → git checkout
+# Switch branch or create new branch: git checkout -b new-branch
+"\eOR": "git checkout "
+
+# F4 → git pull
+# Fetch and merge latest changes from remote
+"\eOS": "git pull\n"
+
+# F5 → git add .
+# Stage all changes
+"\e[15~": "git add .\n"
+
+# F6 → git diff
+# Show unstaged changes before committing
+"\e[17~": "git diff\n"
+
+# F7 → git commit -m ''
+# Commit staged changes with a message
+"\e[18~": "git commit -m ''\n"
+
+# F8 → git log --oneline
+# Quick, concise commit history
+"\e[19~": "git log --oneline\n"
+
+# F9 → git log --graph --all
+# Visual graph of commits and branches
+"\e[20~": "git log --graph --all\n"
+
+# F10 → git push
+# Push local commits to remote repository
+"\e[21~": "git push\n"
+
+# F11 → git fetch
+# Fetch remote updates without merging
+"\e[23~": "git fetch\n"
+
+# F12 → git merge
+# Merge another branch into current branch
+"\e[24~": "git merge "
+
+# F13 → git stash
+# Temporarily save changes without committing
+"F13": "git stash\n"
+
+# F14 → git stash pop
+# Restore stashed changes
+"F14": "git stash pop\n"
+
+# F15 → git reset --soft HEAD~1
+# Undo last commit but keep changes staged
+"F15": "git reset --soft HEAD~1\n"
+
+# F16 → git reset --hard HEAD~1
+# Undo last commit and discard changes
+"F16": "git reset --hard HEAD~1\n"
+
+# F17 → git remote -v
+# Show remote repository URLs
+"F17": "git remote -v\n"
+
+# F18 → git tag
+# List tags for versioning
+"F18": "git tag\n"
+
+# F19 → git show
+# Show details of last commit
+"F19": "git show\n"
+
+# F20 → git clean -f
+# Remove untracked files (dangerous!)
+"F20": "git clean -f\n"
