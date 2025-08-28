@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # Enable inline comments
 setopt INTERACTIVE_COMMENTS
 
@@ -34,11 +36,16 @@ zstyle ':completion:*' cache-path $HOME/.cache/zsh
 export npm_config_cache=$HOME/.cache/npm
 
 # Antidote plugin manager
+export ANTIDOTE_NO_UPDATE=1
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 antidote load
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#999999"
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
 
 # Starship prompt
 eval "$(starship init zsh)"
+
+# zprof
