@@ -1,3 +1,6 @@
+# Enable inline comments
+setopt INTERACTIVE_COMMENTS
+
 # Set PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -19,9 +22,23 @@ alias gs="git status"
 alias gc="git commit -m"
 alias gp="git pull"
 
+# Initialize completion system
+zstyle ':completion:*' verbose no
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path $HOME/.cache/zsh/zcompcache
+autoload -Uz compinit
+compinit -C
+
+# Redirect npm completion cache
+zstyle ':completion:*' cache-path $HOME/.cache/zsh
+export npm_config_cache=$HOME/.cache/npm
+
 # Antidote plugin manager
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 antidote load
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#999999"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Starship prompt
 eval "$(starship init zsh)"
