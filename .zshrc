@@ -1,5 +1,5 @@
 # Profile checking normaly disabled
-zmodload zsh/zprof
+# zmodload zsh/zprof
 # Used zprof from the end of file
 
 # Enable inline comments
@@ -23,7 +23,7 @@ export EDITOR='nano'
 
 # Aliases
 alias gs="git status"
-alias ga="git add ?"
+alias ga="git add ."
 alias gc="git commit -m"
 alias gpl="git pull"
 alias gps="git push"
@@ -34,8 +34,11 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path $HOME/.cache/zsh/zcompcache
 autoload -Uz compinit
 compinit -C
+zstyle ':completion:*' use-compctl no
+zstyle ':completion:*' rehash false
 # Explicitly disable compdump creation:
-unsetopt compinit_dump
+# unsetopt compinit_dump
+# This generates an error regarding compinit_dump
 
 # Redirect npm completion cache
 zstyle ':completion:*' cache-path $HOME/.cache/zsh
@@ -56,11 +59,13 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
 eval "$(starship init zsh)"
 
 # Profile checking
-# used toghether with zmodload from the top of file
-zprof
+# Used toghether with zmodload from the top of file
+
+# zprof
+
 # command used in terminal when zprof enabled
 # source ~/.zshrc > profile.txt
-$ head -n 20 profile.txt
+# head -n 20 profile.txt
 
 # Terminal commands to clear cache
 # rm -f ~/.zcompdump*
