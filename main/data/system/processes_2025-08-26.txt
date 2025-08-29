@@ -1,0 +1,6 @@
+=== Running Processes ===
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+u0_a463  20127  0.1  0.0 10777176 7388 pts/0   S<s   1970   0:02 /data/data/com.termux/files/usr/bin/zsh -l
+u0_a463  24226  1.4  0.0 10929624 4168 pts/0   S<+   1970   0:00 /bin/bash /data/data/com.termux/files/home/main/scripts/Termux-env/collect-env-data.sh
+u0_a463  24452  1.0  0.0 10778624 2984 pts/0   R<+   1970   0:00 ps aux
+u0_a463  24453  1.0  0.0 10885488 3008 pts/0   S<+   1970   0:00 head -20

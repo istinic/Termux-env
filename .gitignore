@@ -3,11 +3,23 @@
 .ssh/authorized_keys
 .ssh/known_hosts*
 .bash_history
+.zsh_history
+
+# Zsh configuration and cache
+.oh-my-zsh/
+.shell.pre-oh-my-zsh
+.termux/
+.zcompdump*
+.zsh_plugins.zsh
+.antidote/
+.wget-hsts
+
+# Development-specific files
+.zsh_plugins.txt
 
 # NPM cache and packages
 .npm/
 node_modules/
-global_packages/
 package-lock.json
 
 # Temporary/cache files
@@ -15,10 +27,16 @@ package-lock.json
 .tmp/
 *.tmp
 *.log
-
-# Large files you might not want to track
-*.zip
 *.tar.gz
+*.bak
+
+# Test files and directories
+test-*/
+test.txt
+test/
+
+# Large files
+*.zip
 
 # Nested repositories
 main/ma2/
@@ -26,11 +44,3 @@ main/ma2/
 
 # Android storage symlinks
 storage/
-
-# Zsh configuration files
-.oh-my-zsh/
-.shell.pre-oh-my-zsh
-.termux/
-.zcompdump*
-.zsh_history
-

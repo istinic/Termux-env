@@ -1,0 +1,1 @@
+deb https://grimler.se/termux/termux-main stable main
