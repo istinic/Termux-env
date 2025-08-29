@@ -24,7 +24,7 @@ setopt MULTIOS            # optional, better handling of multi-line output
 # Two-line prompt:
 # Top line: Git branch
 # Bottom line: current directory and input
-PROMPT='$(git_branch)
+PROMPT='$(git_status)$(date "+%y.%m.%d %H:%M")
 %F{blue}%~%f '
 
 # Completion system
