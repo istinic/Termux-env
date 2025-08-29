@@ -1,4 +1,4 @@
-# Minimal Zsh configuration
+# Zsh configuration
 setopt INTERACTIVE_COMMENTS
 setopt hist_ignore_all_dups
 setopt share_history
