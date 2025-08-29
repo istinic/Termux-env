@@ -1,39 +1,31 @@
-# Enable inline comments
+# Minimal Zsh configuration
 setopt INTERACTIVE_COMMENTS
-
-# History settings
-HISTSIZE=5000
-SAVEHIST=5000
 setopt hist_ignore_all_dups
 setopt share_history
-
-# Preferred editor
+HISTSIZE=5000
+SAVEHIST=5000
 export EDITOR='nano'
-
-# Set PATH
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Source .profile and .bashrc if they exist
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.bashrc ] && source ~/.bashrc
 
-# Optional: basic aliases
-alias gs="git status"
-alias ga="git add ."
-alias gc="git commit -m"
-alias gpl="git pull"
-alias gps="git push"
-
-# Enable command substitution in prompt
-setopt prompt_subst
-
 # Source all custom prompt functions
 for f in ~/.myprompt/*.sh; do
-  source "$f"
+  source $f
 done
 
-# Minimal prompt with Git branch
-PROMPT='%~ $(git_branch) '
+# Multi-line prompt support
+setopt PROMPT_SUBST       # already enabled
+setopt PROMPT_CR          # move to new line before each prompt
+setopt MULTIOS            # optional, better handling of multi-line output
+
+# Two-line prompt:
+# Top line: Git branch
+# Bottom line: current directory and input
+PROMPT='$(git_branch)
+%F{blue}%~%f '
 
 # Completion system
 autoload -Uz compinit
