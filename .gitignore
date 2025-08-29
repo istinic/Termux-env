@@ -28,6 +28,7 @@ package-lock.json
 *.tmp
 *.log
 *.tar.gz
+*.bak
 
 # Test files and directories
 test-*/
