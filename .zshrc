@@ -26,3 +26,9 @@ setopt MULTIOS            # optional, better handling of multi-line output
 # Bottom line: current directory and input
 PROMPT='$(git_status)$(date "+%y.%m.%d %H:%M")
 %F{blue}%~%f '
+
+# Source zsh-autosuggestions
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Source zsh-syntax-highlighting (must be sourced last)
+[ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
