@@ -11,7 +11,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 [ -f ~/.profile ] && source ~/.profile
 [ -f ~/.bashrc ] && source ~/.bashrc
 
-# Source all custom prompt functions
+# Source all custom configurations
 for f in ~/.myprompt/*.sh; do
   source $f
 done
@@ -26,7 +26,3 @@ setopt MULTIOS            # optional, better handling of multi-line output
 # Bottom line: current directory and input
 PROMPT='$(git_status)$(date "+%y.%m.%d %H:%M")
 %F{blue}%~%f '
-
-# Completion system
-autoload -Uz compinit
-compinit
