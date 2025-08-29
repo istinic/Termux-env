@@ -22,6 +22,11 @@ git_status() {
       gitstat+="?"
     fi
     
-    echo "%F{yellow}($branch$gitstat)%f"
+    # Choose color based on git status
+    if [[ -n "$gitstat" ]]; then
+      echo "%F{yellow}($branch$gitstat)%f"  # Yellow if there are changes
+    else
+      echo "%F{green}($branch)%f"           # Green if clean
+    fi
   fi
 }
