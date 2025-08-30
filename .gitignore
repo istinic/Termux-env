@@ -44,3 +44,8 @@ main/ma2/
 
 # Android storage symlinks
 storage/
+
+# istinic
+.config/htop/htoprc
+main/data/analytics/package-analysis.md
+main/data/packages/installed-packages-raw.txt
