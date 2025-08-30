@@ -1,6 +1,6 @@
 # Termux Environment Tracker
 
-This repository tracks my personal Termux environment configuration, documentation, and scripts for backup and restoration purposes.
+This repository tracks my personal Termux environment configuration, documentation, and scripts for backup and restoration purposes. The ultimate goal is to create comprehensive automation that enables one-command environment replication.
 
 ## Repository Structure
 
@@ -31,12 +31,35 @@ This repository tracks my personal Termux environment configuration, documentati
 │           ├── collect-env-data.sh           # Environment data collection
 │           ├── detect-changes.sh             # Change detection system
 │           ├── generate-analytics.sh         # Analytics generation
-│           └── analyze-packages.sh           # Package intelligence (upcoming)
+│           ├── analyze-packages.sh           # Package intelligence (in progress)
+│           └── install.sh                    # Auto-install script (planned)
 ├── docs/                                     # GitHub Pages dashboard
 ├── .github/workflows/                        # GitHub Actions automation
 ├── CHANGELOG.md                              # Project changelog
 ├── ROADMAP.md                                # High-level roadmap
 └── README.md                                 # This file
+```
+
+## Branch Strategy
+
+### Main Branches
+- **`main`**: Production-ready automation and stable environment tracking
+- **`daily-experiments`**: Learning playground for daily homework and discoveries  
+- **`shell-experiments`**: Zsh/bash testing, prompt improvements, and shell configurations
+
+### Development Workflow
+```bash
+# For experiments and learning
+git checkout daily-experiments
+# Make discoveries, test new tools
+
+# For shell improvements  
+git checkout shell-experiments
+# Test zsh configurations, prompts, etc.
+
+# Merge good discoveries back to main
+git checkout main
+git merge shell-experiments  # when ready for production
 ```
 
 ## What This Repository Tracks
@@ -47,6 +70,7 @@ This repository tracks my personal Termux environment configuration, documentati
 - **Custom scripts**: Personal automation and utility scripts
 - **Environment data**: Automated collection and analysis of system state
 - **Package intelligence**: Analysis and insights for installed packages
+- **Learning experiments**: Branch-based exploration and discovery
 
 ### Excluded (via .gitignore)
 - **Sensitive data**: SSH keys, authentication tokens
@@ -68,6 +92,9 @@ This repository tracks my personal Termux environment configuration, documentati
 ### Current Focus
 **Milestone 3.3: Package Intelligence System** - Building practical insights and guidance for the 90+ installed Termux packages.
 
+### Next Phase
+**Auto-Install System** - Creating one-command environment replication for complete automation.
+
 ## Live Dashboard
 
 **GitHub Pages**: [https://istinic.github.io/Termux-env/](https://istinic.github.io/Termux-env/)
@@ -78,18 +105,55 @@ Features:
 - Component health indicators  
 - Professional dark theme with responsive design
 
+## Project Goals
+
+### Primary Vision
+**Automation → Tutorial**: Create comprehensive automation that enables others to replicate this entire Termux environment with a single command.
+
+### Ultimate Goal
+```bash
+# One-command environment setup
+curl -sSL https://raw.githubusercontent.com/istinic/Termux-env/main/main/scripts/Termux-env/install.sh | bash
+```
+
+This will:
+- Install all 90+ packages automatically
+- Configure Zsh with custom prompts and enhancements
+- Set up Git, NPM, and other tools
+- Deploy monitoring and analytics scripts
+- Create live dashboard
+- Replicate complete environment
+
+### Learning Objectives
+- **Backup**: Keep safe copies of important configurations
+- **Documentation**: Record learning process and solutions
+- **Automation**: Streamline environment setup and maintenance
+- **Intelligence**: Understand and optimize package usage
+- **Version Control**: Track changes over time
+- **Restoration**: Quick recovery of Termux environment on new devices
+- **Knowledge Base**: Build comprehensive Termux learning resource
+- **Experimentation**: Safe playground for daily learning and discovery
+
 ## Getting Started
 
-### Setting Up SSH for Git
+### For New Users (Future)
 ```bash
-# Generate SSH key
+# Complete environment replication
+curl -sSL https://raw.githubusercontent.com/istinic/Termux-env/main/main/scripts/Termux-env/install.sh | bash
+```
+
+### For Development
+```bash
+# Clone repository
+git clone https://github.com/istinic/Termux-env.git
+cd Termux-env
+
+# Set up SSH for Git
 ssh-keygen -t ed25519 -C "your-email@example.com"
+cat ~/.ssh/id_ed25519.pub  # Add to GitHub
 
-# Copy public key to GitHub
-cat ~/.ssh/id_ed25519.pub
-
-# Test connection
-ssh -T git@github.com
+# Start experimenting
+git checkout daily-experiments
 ```
 
 ### Using the Automation System
@@ -102,64 +166,46 @@ ssh -T git@github.com
 
 # Generate comprehensive analytics
 ./main/scripts/Termux-env/generate-analytics.sh
+
+# Package intelligence analysis (in development)
+./main/scripts/Termux-env/analyze-packages.sh
 ```
 
-## Current Workflow
+## Current Environment Stats
+
+- **Total Packages**: 90+ installed and tracked
+- **Storage Usage**: 42M (optimal efficiency)
+- **Shell**: Zsh with OhMyZsh + custom prompt enhancements
+- **Health Score**: 98% overall system health
+- **Growth Rate**: 0% (stable mature environment)
+- **Branch Strategy**: Multi-branch experimentation workflow
+
+## Development Workflow
 
 ### Daily Development
-1. **Make changes** to Termux environment
-2. **Run data collection**: `./main/scripts/Termux-env/collect-env-data.sh`
-3. **Document changes**: Update markdown files in `main/docs/Termux/`
-4. **Commit regularly**: Track important configuration changes
-5. **Push to GitHub**: Trigger automation workflows and update live dashboard
+1. **Choose branch**: `daily-experiments` for learning, `shell-experiments` for shell work
+2. **Make changes** and experiment freely
+3. **Document discoveries**: Update relevant markdown files
+4. **Test thoroughly**: Ensure changes work properly
+5. **Merge to main**: When ready for production use
+6. **Run data collection**: Update environment tracking
+7. **Push changes**: Trigger automation and dashboard updates
 
 ### Git Commands
 ```bash
-# Run environment data collection
-./main/scripts/Termux-env/collect-env-data.sh
+# Switch to experiment branch
+git checkout daily-experiments
 
-# Regular update workflow
+# Regular development cycle
 git add .
-git commit -m "Update: describe your changes"
+git commit -m "Experiment: describe your discovery"
 git push
 
-# Check automation status
-git log --oneline | head -5
+# When ready for production
+git checkout main
+git merge daily-experiments
+git push  # Triggers automation workflows
 ```
-
-## Package & Environment Information
-
-### Current Environment
-- **Total Packages**: 90+ installed and tracked
-- **Storage Usage**: 42M (optimal efficiency)
-- **Shell**: Zsh with OhMyZsh (recently installed)
-- **Health Score**: 98% overall system health
-- **Growth Rate**: 0% (stable mature environment)
-
-### Analytics Commands
-```bash
-# View collected environment data
-cat main/data/packages/current-packages.txt | head -10
-
-# Check environment statistics  
-cat main/data/snapshots/latest-snapshot.json
-
-# View latest analytics
-cat main/data/analytics/dashboards/environment-dashboard_*.md | tail -20
-
-# Generate fresh environment data
-./main/scripts/Termux-env/collect-env-data.sh
-```
-
-## Goals
-
-- **Backup**: Keep safe copies of important configurations
-- **Documentation**: Record learning process and solutions
-- **Automation**: Streamline environment setup and maintenance
-- **Intelligence**: Understand and optimize package usage
-- **Version Control**: Track changes over time
-- **Restoration**: Quick recovery of Termux environment on new devices
-- **Learning**: Build comprehensive Termux knowledge base
 
 ## Technical Architecture
 
@@ -169,39 +215,15 @@ cat main/data/analytics/dashboards/environment-dashboard_*.md | tail -20
 - **Intelligent Insights**: Automated analysis with recommendations
 - **Visual Dashboard**: Professional web interface for monitoring
 - **Change Detection**: Smart analysis of environment modifications
+- **Branch-Based Development**: Safe experimentation with production stability
 
 ### Data Flow
 1. Local scripts collect environment data
-2. Data pushed to GitHub repository
+2. Data pushed to GitHub repository  
 3. GitHub Actions process and analyze data
 4. Generated reports and insights stored
 5. Live dashboard updated automatically
 6. Change detection triggers alerts and recommendations
-
-## Notes
-
-- **Branch Strategy**: Feature branches for each milestone development
-- **SSH Management**: Private keys never tracked in repository
-- **Regular Automation**: GitHub Actions provide continuous monitoring
-- **Documentation Focus**: Comprehensive guides for setup decisions
-- **Shell Environment**: Recently upgraded to Zsh with OhMyZsh for enhanced productivity
-
-## Troubleshooting
-
-### Common Issues
-- **Pager errors**: Set `git config --global core.pager ""`
-- **SSH connection**: Verify key is added to GitHub
-- **Script permissions**: Ensure scripts are executable with `chmod +x`
-- **Data collection**: Run scripts from repository root directory
-
-### Recovery Process
-If environment is lost, restore by:
-1. Clone this repository to `$HOME`
-2. Review configuration files in repository root
-3. Check `main/docs/Termux/` for setup instructions
-4. Run data collection: `./main/scripts/Termux-env/collect-env-data.sh`
-5. Execute any setup scripts in `main/scripts/Termux-env/`
-6. Configure shell environment (Zsh/OhMyZsh)
 
 ## Links
 
@@ -213,6 +235,7 @@ If environment is lost, restore by:
 ---
 
 **Last Updated**: Auto-generated on commit  
-**Current Version**: 3.2.1 - Post-Pivot Cleanup  
-**Termux Shell**: Zsh with OhMyZsh  
-**Device**: Personal Android device
+**Current Version**: 3.3.0 - Package Intelligence & Auto-Install Phase  
+**Termux Shell**: Zsh with custom prompt enhancements  
+**Device**: Personal Android device  
+**Development Strategy**: Multi-branch experimentation with production stability

@@ -27,20 +27,13 @@ Advanced shell enhancements:
 - **Improved keybindings**: Ctrl+R for reverse search, Ctrl+Left/Right for word navigation
 
 #### Plugin Dependencies
-Plugins are managed as git submodules and included automatically:
-- `zsh-autosuggestions` - History-based command suggestions
-- `zsh-syntax-highlighting` - Real-time command syntax highlighting
-
-If cloning this repository, initialize submodules:
+Optional but recommended plugins (auto-detected):
 ```bash
-# When cloning
-git clone --recursive <repo-url>
+# Install autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
-# Or after cloning
-git submodule update --init --recursive
-
-# To update plugins to latest versions
-git submodule update --remote
+# Install syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 ```
 
 ## Current Prompt Format
