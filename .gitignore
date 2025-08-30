@@ -40,6 +40,7 @@ test/
 
 # Nested repositories
 main/ma2/
+main/backup/Acode-1.11.6
 */.git*
 
 # Android storage symlinks
