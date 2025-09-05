@@ -1,52 +1,109 @@
-# Sensitive files
+# =============================================================================
+# DOTFILES .GITIGNORE - Clean & Organized
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Security & Sensitive Files
+# -----------------------------------------------------------------------------
 .ssh/id_*
 .ssh/authorized_keys
 .ssh/known_hosts*
 .bash_history
 .zsh_history
+.wget-hsts
 
-# Zsh configuration and cache
+# -----------------------------------------------------------------------------
+# Shell & Terminal Configuration Cache
+# -----------------------------------------------------------------------------
 .oh-my-zsh/
 .shell.pre-oh-my-zsh
 .termux/
 .zcompdump*
 .zsh_plugins.zsh
 .antidote/
-.wget-hsts
 
-# Development-specific files
+# Downloaded plugins (keep custom .zsh files)
+.zsh/zsh-autocomplete/
+.zsh/zsh-history-substring-search/
+!.zsh/*.zsh
+!.zsh/*.sh
+
+# -----------------------------------------------------------------------------
+# Development Files
+# -----------------------------------------------------------------------------
 .zsh_plugins.txt
 
-# NPM cache and packages
+# Node.js
 .npm/
 node_modules/
 package-lock.json
 
-# Temporary/cache files
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# -----------------------------------------------------------------------------
+# System & Application State
+# -----------------------------------------------------------------------------
+.local/state/
+.local/share/
 .cache/
+.config/htop/htoprc
+
+# -----------------------------------------------------------------------------
+# Temporary & Log Files
+# -----------------------------------------------------------------------------
 .tmp/
 *.tmp
 *.log
 *.tar.gz
 *.bak
+*.swp
+*.swo
+*~
 
-# Test files and directories
+# -----------------------------------------------------------------------------
+# Test Files & Directories
+# -----------------------------------------------------------------------------
 test-*/
 test.txt
 test/
 
-# Large files
+# -----------------------------------------------------------------------------
+# Large Files & Archives
+# -----------------------------------------------------------------------------
 *.zip
+*.tar.gz
 
-# Nested repositories
+# -----------------------------------------------------------------------------
+# Nested Repositories
+# -----------------------------------------------------------------------------
 main/ma2/
 main/backup/Acode-1.11.6
 */.git*
 
-# Android storage symlinks
+# -----------------------------------------------------------------------------
+# Android/Termux Specific
+# -----------------------------------------------------------------------------
 storage/
 
-# istinic
-.config/htop/htoprc
+# -----------------------------------------------------------------------------
+# OS Specific
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------------------------------------------------------
+# Editor Files
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------------------------------------------------
+# Custom Data Files (instance-specific)
+# -----------------------------------------------------------------------------
 main/data/analytics/package-analysis.md
 main/data/packages/installed-packages-raw.txt

@@ -7,24 +7,27 @@
 # Htop: https://htop.dev/
 # General Bash/Termux keys: https://wiki.termux.com/wiki/Keyboard
 
-# ===================================================
-# Windows common F-key conventions (for reference)
-# ===================================================
-# F1 - Help / manual
-# F2 - Rename / edit
-# F3 - Search
-# F4 - Close / exit
-# F5 - Refresh / repeat
-# F6 - Move / switch
-# F7 - History / spell check
-# F8 - Extend selection / console scroll
-# F9 - Menu / scripts
-# F10 - Menu / exit
+# ======================================
+# Windows common F-key conventions
+# ======================================
+# F1 - Opens Help menu in most applications
+# F2 - Renames selected file or folder
+# F3 - Opens search feature in File Explorer
+# F4 - Close / exit / Opens address bar in File Explorer 
+# F5 - Refresh / repeat / Refreshes active window or webpage
+# F6 - Move / switch / Moves cursor to address bar in browser
+# F7 - History / spell check / Often used for spell check in apps like Word
+# F8 - Extend selection / console scroll / Used to access Safe Mode during boot (older systems)
+# F9 - Menu / scripts / Refreshes document in Word; varies by app
+# F10 - Menu / exit / Activates menu bar in many applications
+# F11 - Toggles full-screen mode in browsers
+# F12 - Opens "Save As" dialog in Word; Dev Tools in browsers|
+# F13 - F24 - no actions assigned in windows
 # (Mostly for inspiration)
 
-# ===================================================
+# ======================================
 # 20 Most Used Termux / Bash Actions
-# ===================================================
+# ======================================
 # 1 - List files: ls -la
 # 2 - Current directory: pwd
 # 3 - Clear screen: clear
@@ -55,13 +58,13 @@
 
 # Example entries:
 # F1 - List files in current directory
-#"\eOP": "ls -la\n"
+"\eOP": "ls -la\n"
 
 # F2 - Show current directory path
-#"\eOQ": "pwd\n"
+"\eOQ": "pwd\n"
 
 # F3 - Clear the screen
-#"\eOR": "clear\n"
+"\eOR": "clear\n"
 
 # F4 - Show command history
 #"\eOS": "history\n"
@@ -87,7 +90,8 @@
 
 # Points to the git command list
 
-$include ~/.inputrc.d/git
+$include ~/.inputrc.d/Termux.default
+# $include ~/.inputrc.d/git
 
 # Use:
 # bind -f ~/.inputrc

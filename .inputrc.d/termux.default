@@ -1,0 +1,93 @@
+#  Format:
+#   # F-key description
+#   "\e??": "command\n"
+
+# ======================================
+# Windows common F-key conventions
+# ======================================
+# F1 - Opens Help menu in most applications
+# F2 - Renames selected file or folder
+# F3 - Opens search feature in File Explorer
+# F4 - Close / exit / Opens address bar in File Explorer 
+# F5 - Refresh / repeat / Refreshes active window or webpage
+# F6 - Move / switch / Moves cursor to address bar in browser
+# F7 - History / spell check / Often used for spell check in apps like Word
+# F8 - Extend selection / console scroll / Used to access Safe Mode during boot (older systems)
+# F9 - Menu / scripts / Refreshes document in Word; varies by app
+# F10 - Menu / exit / Activates menu bar in many applications
+# F11 - Toggles full-screen mode in browsers
+# F12 - Opens "Save As" dialog in Word; Dev Tools in browsers|
+# F13 - F24 - no actions assigned in windows
+# (Mostly for inspiration)
+
+# F1
+"^[OP": "--help\n"
+
+# F2
+"^[OQ": "\n"
+
+# F3
+"^[OR": "\n"
+
+# F4
+"^[OS": "\n"
+
+# F5
+"^[[15~": "\n"
+
+# F6
+"^[[17~": "\n"
+
+# F7
+"^[[18~": "\n"
+
+# F8
+"^[[19~": "\n"
+
+# F9
+"^[[20~": "\n"
+
+# F10
+"^[[21~": "\n"
+
+# F11
+"^[[23~": "\n"
+
+# F12
+"^[[24~": "\n"
+
+# F13
+"F13": "\n"
+
+# F14
+"F14": "\n"
+
+# F15
+"F15": "\n"
+
+# F16
+"F16": "\n"
+
+# F17
+"F17": "\n"
+
+# F18
+"F18": "\n"
+
+# F19
+"F19": "\n"
+
+# F20
+"F20": "\n"
+
+# F21
+"F21": "\n"
+
+# F22
+"F22": "\n"
+
+# F23
+"F23": "\n"
+
+# F24
+"F24": "\n"

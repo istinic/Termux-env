@@ -1,7 +1,10 @@
 # Zsh configuration
 setopt INTERACTIVE_COMMENTS
-setopt hist_ignore_all_dups
-setopt share_history
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt NO_BEEP
 HISTSIZE=5000
 SAVEHIST=5000
 export EDITOR='nano'
@@ -17,18 +20,30 @@ for f in ~/.myprompt/*.sh; do
 done
 
 # Multi-line prompt support
-setopt PROMPT_SUBST       # already enabled
-setopt PROMPT_CR          # move to new line before each prompt
-setopt MULTIOS            # optional, better handling of multi-line output
+setopt PROMPT_SUBST       # Enable command substitution in prompts
+setopt PROMPT_CR          # Move to new line before each prompt
+setopt MULTIOS            # Better handling of multi-line output
 
-# Two-line prompt:
-# Top line: Git branch
-# Bottom line: current directory and input
-PROMPT='$(git_status)$(date "+%y.%m.%d %H:%M")
+# Enhanced 3-line prompt
+PROMPT='$(git_status_enhanced)
+$(date "+%y.%m.%d %H:%M")$(get_battery_simple)$(get_language_versions)$(get_exit_code)$_cmd_duration
 %F{blue}%~%f '
 
-# Source zsh-autosuggestions
-[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# =============================================================================
+# ZSH PLUGINS - Load in optimal order
+# =============================================================================
 
-# Source zsh-syntax-highlighting (must be sourced last)
+# 1. Load autocomplete first (if available)
+[ -f ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# 2. Load history search (after autocomplete to avoid conflicts)
+[ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# 3. Set key bindings (after both plugins loaded)
+bindkey '^[[A' history-substring-search-up      # Up arrow
+bindkey '^[[B' history-substring-search-down    # Down arrow  
+bindkey '^P' history-substring-search-up        # Ctrl+P
+bindkey '^N' history-substring-search-down      # Ctrl+N
+
+# 4. Load syntax highlighting last (always goes last)
 [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
