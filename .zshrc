@@ -39,11 +39,5 @@ $(date "+%y.%m.%d %H:%M")$(get_battery_simple)$(get_language_versions)$(get_exit
 # 2. Load history search (after autocomplete to avoid conflicts)
 [ -f ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# 3. Set key bindings (after both plugins loaded)
-bindkey '^[[A' history-substring-search-up      # Up arrow
-bindkey '^[[B' history-substring-search-down    # Down arrow  
-bindkey '^P' history-substring-search-up        # Ctrl+P
-bindkey '^N' history-substring-search-down      # Ctrl+N
-
-# 4. Load syntax highlighting last (always goes last)
+# 3. Load syntax highlighting last (always goes last)
 [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
